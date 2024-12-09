@@ -5,6 +5,9 @@ const authRoutes = require("./routes/authRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 
+
+
+
 dotenv.config();
 const app = express();
 
@@ -21,10 +24,14 @@ app.options('*', cors());
 // Middleware to parse JSON
 app.use(express.json());
 
+
 // Routes
 app.use("/auth", authRoutes);
 app.use("/photos", photoRoutes);
 app.use("/comments", commentRoutes);
+
+// app.use('/uploads', express.static('uploads'));
+
 
 const PORT = process.env.PORT || 5000;
 
