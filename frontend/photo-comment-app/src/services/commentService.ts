@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'http://localhost:5000';
+console.log(API_URL)
 
 export const addComment = (token: string, photoId: number, text: string) =>
   axios.post(
