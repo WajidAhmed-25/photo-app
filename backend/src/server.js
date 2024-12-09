@@ -5,6 +5,7 @@ const authRoutes = require("./routes/authRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 
+const path = require("path");
 
 
 
@@ -23,6 +24,12 @@ app.options('*', cors());
 
 // Middleware to parse JSON
 app.use(express.json());
+
+
+// To upload the picture //
+
+app.use("/uploads", express.static("uploads"));
+
 
 
 // Routes
